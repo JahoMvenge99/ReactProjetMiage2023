@@ -13,10 +13,10 @@ const Header = () => {
                      <li><NavLink to="/Coups-de-coeur" className={nav => nav.isActive ? "nav-active": ""}>
                        Coup de coeur</NavLink>
                        </li>
-                    {/* <li>
+                    { <li>
                     <NavLink to="/Contact" className={nav => nav.isActive ? "nav-active": ""}>
                         Contact </NavLink>
-                        </li> */}
+                        </li> }
                    
                 </ul>
             </nav>

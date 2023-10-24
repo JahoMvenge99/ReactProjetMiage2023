@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Home from './pages/Home';
+import './styles/index.scss';
 import Likepage from './pages/Likepage';
 const App = () => {
   return (
