@@ -1,10 +1,16 @@
 import React from 'react';
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Likepage from './pages/Likepage';
 const App = () => {
   return (
-    <div>
-      <h1>Bonjour !!!</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path ="/Coup de pouce" element={<Likepage />} />
+      <Route path="/*" element={<Home />} />
+    </Routes>
+    </BrowserRouter>
   );
 };
 
