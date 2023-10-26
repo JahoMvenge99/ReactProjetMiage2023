@@ -13,7 +13,7 @@ const Form = () => {
         axios
         .get(
           `https://api.themoviedb.org/3/search/movie?
-        api_key=166e3d8f8fb96fa7bd44cdb2f85fb5f0&query=war&language=fr-FR`, config
+        api_key=166e3d8f8fb96fa7bd44cdb2f85fb5f0&query=mariage&language=fr-FR`, config
         )
         .then((res) => setMoviesData(res.data.results));
     }, []);
@@ -35,8 +35,9 @@ const Form = () => {
             </div>
         </div>
         <div className='result'>
+       
         {moviesData.slice(0,12).map((movie) => (
-          <Card key={movie.id} />
+          <Card key={movie.id} poster={movie.poster_path || ''} /* Autres props ici */ />
        ))};
         </div>
         </div>
