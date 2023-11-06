@@ -20,7 +20,7 @@ const Header = () => {
                    
                 </ul>
             </nav>
-            <h1>FIND YOUR MOUVIE</h1>
+            <h1>Trouver votre Film</h1>
         </div>
     );
 };
