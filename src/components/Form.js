@@ -56,6 +56,7 @@ const Form = () => {
             } else if (sortGoodBad === "badToGood") {
               return a.vote_average - b.vote_average;
             }
+            return 0;
           })
           .map((movie) => (
             <Card movie={movie} key={movie.id} poster={movie.poster_path} />

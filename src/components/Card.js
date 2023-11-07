@@ -85,7 +85,8 @@ const Card = ({ movie }) => {
     
       const deleteStorage = () => {
         let storedData = window.localStorage.movies.split(",");
-        let newData = storedData.filter((id) => id != movie.id);
+        let newData = storedData.filter((id) => id !== movie.id);
+        
     
         window.localStorage.movies = newData;
       };
@@ -116,8 +117,9 @@ const Card = ({ movie }) => {
           ? genreFinder()
           : movie.genres.map((genre) => <li key={genre}>{genre.name}</li>)}
       </ul>
+      
 
-      {movie.overview ? <h3>Synopsis</h3> : ""}
+      <h3>{movie.overview ? "Synopsis" : null}</h3>
       <p>{movie.overview}</p>
       {movie.genre_ids ? (
         <div className="btn" onClick={() => addStorage()}>
