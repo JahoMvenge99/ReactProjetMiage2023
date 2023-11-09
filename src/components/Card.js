@@ -1,4 +1,4 @@
-import React from 'react';
+import { default as React } from 'react';
 
 const Card = ({ movie }) => {
     const dateFormater = (date)=>{
@@ -140,4 +140,4 @@ const Card = ({ movie }) => {
     );
 };
 
-export default Card;
+export { Card };

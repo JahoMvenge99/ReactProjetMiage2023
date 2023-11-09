@@ -1,14 +1,12 @@
 import { default as React } from 'react';
 import { Header } from '../components/Header';
-import { Form } from '../components/Form';
-const Home = () => {
+const Contact = () => {
     return (
-        <div className="home-page">
+        <div className="contact-page">
             <Header />
-            <Form />
             
         </div>
     );
 };
 
-export { Home };
+export { Contact };

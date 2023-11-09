@@ -1,5 +1,6 @@
-import React from 'react';
+import { default as React } from 'react';
 import { NavLink } from 'react-router-dom';
+import { getFavouritesRoute } from '../routing/getFavouritesRoute';
 
 const Header = () => {
     return (
@@ -10,7 +11,7 @@ const Header = () => {
                             <NavLink to="/Home" className={nav => nav.isActive ? "nav-active": ""}>Acceuil</NavLink>
                             </li>
                     
-                     <li><NavLink to="/Coups-de-coeur" className={nav => nav.isActive ? "nav-active": ""}>
+                     <li><NavLink to={getFavouritesRoute()} className={nav => nav.isActive ? "nav-active": ""}>
                        Coup de coeur</NavLink>
                        </li>
                     { <li>
@@ -25,4 +26,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export { Header };

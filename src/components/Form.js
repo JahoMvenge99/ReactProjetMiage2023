@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
-import Card from './Card';
+import { default as React,  useEffect, useState } from 'react';
+import { Card } from './Card';
 
 const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNjZlM2Q4ZjhmYjk2ZmE3YmQ0NGNkYjJmODVmYjVmMCIsInN1YiI6IjY1MjAxMDA1ZWE4NGM3MDE0ZWZmNDdjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LSNWY9VbhagOQdXNbuzk9POZ73RB5KILr1gRGf1p4cI';
 const config = {
@@ -11,12 +10,13 @@ const Form = () => {
    const [search, setSearch] = useState("code");
    const [sortGoodBad, setSortGoodBad] = useState(null);
     useEffect(() => {
-        axios
-        .get(
-          `https://api.themoviedb.org/3/search/movie?
-        api_key=166e3d8f8fb96fa7bd44cdb2f85fb5f0&query=${search}&language=fr-FR`, config
-        )
-        .then((res) => setMoviesData(res.data.results));
+
+      fetch(`https://api.themoviedb.org/3/search/movie?
+      api_key=166e3d8f8fb96fa7bd44cdb2f85fb5f0&query=${search}&language=fr-FR`, config).then((response) => {
+        response.json().then((data) => {
+          setMoviesData(data.results);
+        });
+      });
     }, [search]);
     return (
         <div className='form-component'>
@@ -67,4 +67,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export { Form };
