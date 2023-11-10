@@ -1,9 +1,8 @@
-import React from "react";
+import { default as React } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Header from "../components/Header";
-import axios from "axios";
-import Card from "../components/Card";
+import { Header } from "../components/Header";
+import { Card } from "../components/Card";
 
 
 const LikePage = () => {
@@ -15,12 +14,11 @@ const LikePage = () => {
       : [];
 
     for (let i = 0; i < moviesId.length; i++) {
-      axios
-        .get(
-          `https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=166e3d8f8fb96fa7bd44cdb2f85fb5f0&language=fr-FR`
-        )
-        
-        .then((res) => setListData((listData) => [...listData, res.data]));
+      fetch(`https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=166e3d8f8fb96fa7bd44cdb2f85fb5f0&language=fr-FR`).then((response) => {
+        response.json().then((data) => {
+          setListData((listData) => [...listData, data]);
+        });
+    });
     }
   }, []);
 
@@ -41,4 +39,4 @@ const LikePage = () => {
   );
 };
 
-export default LikePage;
+export { LikePage };

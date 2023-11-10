@@ -2,10 +2,61 @@
   > h2 {
     text-align: center;
     font-size: 1.9rem;
-    letter-spacing: 1px;
-
+    letter-spacing: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     span {
       font-size: 1rem;
     }
   }
+  > h1{
+   
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  >form{
+    display:grid;
+    box-shadow: 50px 50px 50px 60px rgba(212, 191, 191, 0.272);
+    min-width: 800px;
+    max-width: 800px;
+    margin: auto; /* Ajoutez cette ligne pour centrer horizontalement */
+    margin-top: 20px; /* Ajoutez cet espace en haut si nécessaire */
+    margin: top;
+  border-radius: 50px;
+  padding: 80px;
+  text-align: center;
+  align-items: center;
+  font-size: 2rem; 
+  
+  }
+}
+.user-list-page form input[type="submit"] {
+  font-size: 2rem; 
+  border-radius: 100px;
+  transition: background-color 0.3s ease;
+}
+.user-list-page form input[type="submit"]:hover {
+  background-color: #4285f4; /* Changez cette couleur selon vos besoins */
+  color: #ffffff; /* Changez cette couleur selon vos besoins, c'est la couleur du texte lorsqu'on survole le bouton */
+}
+.user-list-page form textarea[name="message"] {
+  margin-bottom: 20px; 
+}
+.success,
+.error{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.success {
+    background: rgb(230, 225, 235);
+
+}
+.error {
+    background : red;
 }

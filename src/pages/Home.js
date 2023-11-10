@@ -1,6 +1,6 @@
-import React from 'react';
-import Header from '../components/Header';
-import Form from '../components/Form';
+import { default as React } from 'react';
+import { Header } from '../components/Header';
+import { Form } from '../components/Form';
 const Home = () => {
     return (
         <div className="home-page">
@@ -11,4 +11,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export { Home };

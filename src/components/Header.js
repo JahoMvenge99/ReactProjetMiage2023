@@ -1,5 +1,7 @@
-import React from 'react';
+import { default as React } from 'react';
 import { NavLink } from 'react-router-dom';
+import { getFavouritesRoute } from '../routing/getFavouritesRoute';
+import { getContactRoute } from '../routing/getContactRoute'
 
 const Header = () => {
     return (
@@ -7,16 +9,15 @@ const Header = () => {
             <nav>
                 <ul>
                         <li>
-                            <NavLink to="/Home" className={nav => nav.isActive ? "nav-active": ""}>Acceuil</NavLink>
+                        <NavLink to="/Home" className={nav => nav.isActive ? "nav-active": ""}>Acceuil</NavLink>
                             </li>
-                    
-                     <li><NavLink to="/Coups-de-coeur" className={nav => nav.isActive ? "nav-active": ""}>
+
+                     <li><NavLink to={getFavouritesRoute()} className={nav => nav.isActive ? "nav-active": ""}>
                        Coup de coeur</NavLink>
                        </li>
-                    { <li>
-                    <NavLink to="/Contact" className={nav => nav.isActive ? "nav-active": ""}>
-                        Contact </NavLink>
-                        </li> }
+                       <li><NavLink to={getContactRoute()} className={nav => nav.isActive ? "nav-active": ""}>
+                       Contact</NavLink>
+                       </li>
                    
                 </ul>
             </nav>
@@ -25,4 +26,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export { Header };
