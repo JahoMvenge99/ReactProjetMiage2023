@@ -3,7 +3,7 @@
   min-width: 260px;
   max-width: 280px;
   height: 620px;
-  background: #060d2c;
+  background: #060d2c73;
   border-radius: 35px;
   margin: 5px;
   padding: 26px 15px 30px;
@@ -59,7 +59,7 @@
     flex-wrap: wrap;
   }
   li {
-    background: #212040;
+    background: transparent;
     border-radius: 18px;
     padding: 0px 7px;
     margin: 0 4px 4px 0;
@@ -100,7 +100,7 @@
     z-index: 50;
 
     &:hover {
-      background: #212040;
+      background: #de4bf8;
       box-shadow: 0 0 10px #546ee4d2;
       font-size: 1.025rem;
     }
