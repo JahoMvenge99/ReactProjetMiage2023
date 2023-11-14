@@ -36,8 +36,10 @@
   font-size: 2rem; 
   border-radius: 100px;
   transition: background-color 0.3s ease;
+  font-size: 2rem;
 }
 .user-list-page form input[type="submit"]:hover {
+  font-size: 2rem;
   background-color: #4285f4; /* Changez cette couleur selon vos besoins */
   color: #ffffff; /* Changez cette couleur selon vos besoins, c'est la couleur du texte lorsqu'on survole le bouton */
 }
