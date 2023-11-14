@@ -2,6 +2,8 @@ import { default as React } from 'react';
 import { Header } from '../components/Header';
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
    
 const Contact = () => {
     const form = useRef();
@@ -33,21 +35,25 @@ const Contact = () => {
         });
     };
     return (
-        <div className="user-list-page">
+        <div className="user-list-page" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
             <Header />
-      <h1>FORMULAIRE DE CONTACT<span>📞📲🤳</span></h1>
+            
+      <div className="user-list-page"data-aos="fade-up"
+     data-aos-duration="3000"><h1>FORMULAIRE DE CONTACT<span>📞📲🤳</span></h1></div>
         <form ref={form} onSubmit={sendEmail}>
          <label>Name</label>
-         <input type="text" name="name" style={{ width: '100%' }} required/>
+         <input type="text" name="name" style={{ width: '100%',fontSize: '2rem' }} required/>
          <label>Email</label>
-         <input type="email" name="email" style={{ width: '100%' }} required autoComplete='off'/>
+         <input type="email" name="email" style={{ width: '100%',fontSize: '2rem'}} required autoComplete='off'/>
          <label>Message</label>
-         <textarea name="message" />
+         <textarea name="message"style={{ width: '100%',fontSize: '4rem'}} />
          
          <input type="submit" value="Send" required/>
-        </form>
+        </form> 
         </div>
     );
 };
-
+AOS.init();
 export { Contact };

@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Header } from "../components/Header";
 import { Card } from "../components/Card";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const LikePage = () => {
   const [listData, setListData] = useState([]);
@@ -25,9 +26,12 @@ const LikePage = () => {
   return (
     <div className="user-list-page">
       <Header />
-      <h2>
+      <div className="user-list-page"data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="3000"><h2>
         Coups de coeur <span>💖</span>
-      </h2>
+      </h2></div>
       <div className="result">
         {listData.length > 0 ? (
           listData.map((movie) => <Card movie={movie} key={movie.id} />)
@@ -38,5 +42,5 @@ const LikePage = () => {
     </div>
   );
 };
-
+AOS.init();
 export { LikePage };

@@ -1,6 +1,7 @@
 import { default as React,  useEffect, useState } from 'react';
 import { Card } from './Card';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNjZlM2Q4ZjhmYjk2ZmE3YmQ0NGNkYjJmODVmYjVmMCIsInN1YiI6IjY1MjAxMDA1ZWE4NGM3MDE0ZWZmNDdjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LSNWY9VbhagOQdXNbuzk9POZ73RB5KILr1gRGf1p4cI';
 const config = {
     headers: { Authorization: `Bearer ${token}` }
@@ -18,8 +19,9 @@ const Form = () => {
       });
     }, [search]);
     return (
-        <div className='form-component'>
-      <div className="form-container">
+        <div className='form-component' >
+      <div className="form-container"data-aos="fade-left"data-aos-delay="800"
+        data-aos-duration="3000">
         <form>
           <input
             type="text"
@@ -29,7 +31,7 @@ const Form = () => {
           />
           <input type="submit" value="Rechercher" />
         </form>
-        <div className="btn-sort-container">
+        <div className="btn-sort-container" >
           <div
             className="btn-sort"
             id="goodToBad"
@@ -37,7 +39,8 @@ const Form = () => {
           >
             Top<span>➜</span>
           </div>
-          <div
+          <div data-aos="fade-right"data-aos-delay="800"
+    data-aos-duration="3000"
             className="btn-sort"
             id="badToGood"
             onClick={() => setSortGoodBad("badToGood")}
@@ -46,7 +49,8 @@ const Form = () => {
           </div>
         </div>
       </div>
-        <div className="result">
+        <div className="result" data-aos="fade-right"data-aos-delay="800"
+    data-aos-duration="3000">
         {moviesData
           .slice(0, 12)
           .sort((a, b) => {
@@ -65,5 +69,5 @@ const Form = () => {
         </div>
     );
 };
-
+AOS.init();
 export { Form };

@@ -1,4 +1,6 @@
 import { default as React } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Card = ({ movie }) => {
     const dateFormater = (date)=>{
@@ -91,7 +93,8 @@ const Card = ({ movie }) => {
         window.localStorage.movies = newData;
       };
     return (
-        <div className="card">
+        <div className="card" data-aos="fade-up"
+        data-aos-duration="3000">
             {movie && movie.poster_path ? (
                 <img
                     src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}
@@ -99,7 +102,8 @@ const Card = ({ movie }) => {
                     
                 />
             ) : (
-                <div className="card">
+                <div className="card" data-aos="fade-up"
+                data-aos-duration="3000">
                     <img
                         src="./img/topgun.png"
                         alt=" Post not available"
@@ -139,5 +143,5 @@ const Card = ({ movie }) => {
         </div>
     );
 };
-
+AOS.init();
 export { Card };
